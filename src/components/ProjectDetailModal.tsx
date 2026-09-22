@@ -21,7 +21,7 @@ export default function ProjectDetailModal({
       />
 
       {/* Modal */}
-      <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+      <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-white/10 bg-tech-900 shadow-2xl shadow-black/50">
         <button
           onClick={onClose}
           className="absolute right-6 top-6 z-10 rounded-full bg-tech-100 p-2 text-tech-600 transition-colors hover:bg-tech-200"
@@ -48,14 +48,14 @@ export default function ProjectDetailModal({
                 {project.category}
               </span>
             </div>
-            <h2 className="mt-4 font-display text-4xl font-bold text-tech-900">
+            <h2 className="mt-4 font-display text-4xl font-bold text-white">
               {project.title}
             </h2>
           </div>
 
           <div className="space-y-4">
             <div>
-              <h3 className="font-display text-lg font-bold text-tech-900">
+              <h3 className="font-display text-lg font-bold text-white">
                 Visão Geral
               </h3>
               <p className="mt-3 text-lg text-tech-600 leading-relaxed">
@@ -65,7 +65,7 @@ export default function ProjectDetailModal({
           </div>
 
           <div>
-            <h3 className="font-display text-lg font-bold text-tech-900 mb-4">
+              <h3 className="font-display text-lg font-bold text-white mb-4">
               Stack Tecnológico
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">

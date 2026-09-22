@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,10 +9,10 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-white text-tech-800 font-sans antialiased;
+    @apply bg-tech-950 text-slate-200 font-sans antialiased;
   }
   ::selection {
-    @apply bg-eco-500/20 text-eco-800;
+    @apply bg-cyan-400/30 text-white;
   }
 }
 
@@ -27,13 +27,13 @@
     transform: translateY(0);
   }
   .text-gradient-eco {
-    @apply bg-gradient-to-r from-eco-600 to-eco-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-eco-300 via-cyan-300 to-eco-400 bg-clip-text text-transparent;
   }
   .text-gradient-tech {
-    @apply bg-gradient-to-r from-tech-900 to-tech-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent;
   }
   .glass {
-    @apply bg-white/80 backdrop-blur-lg border border-white/60;
+    @apply bg-tech-900/80 backdrop-blur-lg border border-white/10;
   }
   .glass-dark {
     @apply bg-tech-900/80 backdrop-blur-lg border border-white/10;
@@ -41,18 +41,26 @@
   .card-hover {
     @apply transition-all duration-500 ease-out hover:-translate-y-2 hover:shadow-2xl;
   }
+  .animate-float-slow {
+    animation: float-slow 7s ease-in-out infinite;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #020617;
 }
 ::-webkit-scrollbar-thumb {
-  background: #16a34a;
+  background: #22c55e;
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #15803d;
+  background: #67e8f9;
 }

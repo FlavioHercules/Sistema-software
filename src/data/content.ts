@@ -1,16 +1,21 @@
 import {
-  Code2, Layers, Lightbulb, Cloud, type LucideIcon,
+  Code2,
+  Layers,
+  Lightbulb,
+  Cloud,
+  type LucideIcon,
 } from 'lucide-react';
+
 import FlávioImg from '@/assets/Flavio.png';
 import IsaacImg from '@/assets/Isaac.png';
 import YankeImg from '@/assets/Yanke.png';
 import SandesonImg from '@/assets/Sandeson.png';
 import DavidLImg from '@/assets/DavidL.png';
 import DavidSImg from '@/assets/DavidS.png';
-import GestaoAmbientalImg from '@/assets/GestaoAmbiental.png';
-import UrbanaImg from '@/assets/Urbana.png';
-import MarketImg from '@/assets/Market.png';
-import TelemetriaImg from '@/assets/Telemetria.png';
+import BarbeariaImg from '@/assets/barbearia.jpg';
+import JogoImg from '@/assets/jogo.jpg';
+import LivrariaImg from '@/assets/livraria.jpg';
+import RestauranteImg from '@/assets/restaurante.jpg';
 
 export interface Service {
   icon: LucideIcon;
@@ -22,76 +27,86 @@ export interface Service {
 export const services: Service[] = [
   {
     icon: Code2,
-    title: 'Desenvolvimento de Software Sob Medida',
+    title: 'Sites institucionais e landing pages',
     description:
-      'Aplicações web e mobile construídas sob medida, com foco em performance, escalabilidade e experiência do usuário.',
-    features: ['Web Apps', 'Mobile (iOS/Android)', 'PWAs', 'E-commerce'],
+      'Presença digital profissional para empresas que precisam transmitir confiança, autoridade e clareza.',
+    features: ['Estrutura moderna', 'UX focada em conversão', 'SEO técnico'],
   },
   {
     icon: Layers,
-    title: 'Arquitetura de Sistemas e Engenharia de Software',
+    title: 'Sistemas e plataformas web',
     description:
-      'Design de arquiteturas robustas, microsserviços e infraestrutura como código para sistemas de alto impacto.',
-    features: ['Microsserviços', 'Domain-Driven Design', 'DevOps', 'Code Review'],
+      'Aplicações robustas para automação de processos, gestão e relacionamento com clientes.',
+    features: ['Dashboards', 'Painel administrativo', 'Integrações'],
   },
   {
     icon: Lightbulb,
-    title: 'Consultoria Tech e Transformação Digital',
+    title: 'Consultoria e estratégia digital',
     description:
-      'Diagnóstico, estratégia e execução para modernizar processos e acelerar a transformação digital do seu negócio.',
-    features: ['Tech Assessment', 'Roadmap', 'Migração', 'Automação'],
+      'Diagnóstico, planejamento e execução para transformar a experiência digital da sua marca.',
+    features: ['Posicionamento', 'Roadmap', 'MVP'],
   },
   {
     icon: Cloud,
-    title: 'Integrações de APIs e Soluções em Nuvem',
+    title: 'Loja virtual e e-commerce',
     description:
-      'Integração de sistemas, APIs REST/GraphQL e arquiteturas cloud-native AWS, GCP e Azure com alta disponibilidade.',
-    features: ['REST / GraphQL', 'AWS / GCP / Azure', 'Serverless', 'CI/CD'],
+      'Loja online com experiência premium para vender com mais clareza, velocidade e segurança.',
+    features: ['Catálogo', 'Carrinho', 'Pagamento'],
   },
 ];
 
 export interface Project {
-  title: string;
+  name: string;
   category: string;
   description: string;
   image: string;
-  tags: string[];
+  technologies: string[];
+  url: string;
 }
 
 export const projects: Project[] = [
   {
-    title: 'Plataforma de Gestão Ambiental',
-    category: 'Sustentabilidade',
+    name: 'Restaurante',
+    category: 'Site institucional',
     description:
-      'SaaS para monitoramento de pegada de carbono e métricas ESG em tempo real para empresas do setor industrial.',
-    image: GestaoAmbientalImg,
-    tags: ['React', 'Node.js', 'AWS', 'IoT'],
+      'Apresentação elegante do restaurante com cardápio, ambiente e proposta gastronômica.',
+    image: RestauranteImg,
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Vercel'],
+    url: 'https://restaurante-theta-five.vercel.app/',
   },
   {
-    title: 'App de Mobilidade Urbana',
-    category: 'Mobile',
+    name: 'Barbearia',
+    category: 'Landing page',
     description:
-      'Aplicativo mobile multiplataforma para otimização de rotas e transporte compartilhado em grandes cidades.',
-    image: UrbanaImg,
-    tags: ['React Native', 'GraphQL', 'Maps API'],
+      'Estrutura moderna para mostrar serviços, diferenciais e conversão por WhatsApp.',
+    image: BarbeariaImg,
+    technologies: ['React', 'Tailwind', 'Responsive'],
+    url: 'https://site-barbearia-indol.vercel.app/',
   },
   {
-    title: 'Marketplace de Energia Renovável',
+    name: 'Livraria',
     category: 'E-commerce',
     description:
-      'Marketplace B2B para comercialização de créditos de energia solar com pagamentos integrados e auditoria.',
-    image: MarketImg,
-    tags: ['Next.js', 'Stripe', 'PostgreSQL'],
+      'Loja com catálogo, foco em conversão e apresentação premium dos produtos.',
+    image: LivrariaImg,
+    technologies: ['React', 'CSS', 'UX', 'E-commerce'],
+    url: 'https://loja-virtual-ten-xi.vercel.app/',
   },
   {
-    title: 'Sistema de Telemetria Industrial',
-    category: 'IoT / Cloud',
+    name: 'Jogo',
+    category: 'Site para marca',
     description:
-      'Plataforma cloud-native de telemetria para indústria 4.0 com dashboards em tempo real e alertas preditivos.',
-    image: TelemetriaImg,
-    tags: ['IoT', 'Kubernetes', 'TimescaleDB'],
+      'Presença digital para apresentar o jogo, sua proposta, mecânicas e chamada para comunidade.',
+    image: JogoImg,
+    technologies: ['React', 'Design System', 'Mobile'],
+    url: 'https://teste-site-six-eosin.vercel.app/',
   },
+  // Ajuste a imagem do projeto aqui: substitua o arquivo SVG por um .png real em public/images/projetos/
+  // Exemplo: '/images/projetos/restaurante.png'
+  // Basta trocar o valor da propriedade 'image' para o novo arquivo sem mexer na estrutura do card.
 ];
+
+export const ecoTechWhatsAppNumber = '557488651620';
 
 export interface TeamMember {
   name: string;
@@ -159,9 +174,10 @@ export interface NavLink {
 }
 
 export const navLinks: NavLink[] = [
-  { label: 'Início', href: '#inicio' },
-  { label: 'Sobre Nós', href: '#sobre' },
-  { label: 'Soluções', href: '#solucoes' },
-  { label: 'Equipe', href: '#equipe' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Início', href: '/' },
+  { label: 'Sobre nós', href: '/sobre' },
+  { label: 'Serviços', href: '/servicos' },
+  { label: 'Projetos', href: '/projetos' },
+  { label: 'Solicitar orçamento', href: '/orcamento' },
+  { label: 'Contato', href: '/contato' },
 ];

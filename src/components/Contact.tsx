@@ -42,21 +42,19 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [key]: value }));
 
   return (
-    <section id="contato" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-eco-100/40 blur-[120px] -z-10" />
-
+    <section id="contato" className="relative py-24 sm:py-32 overflow-hidden bg-[#061426]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Info */}
           <div className="lg:col-span-5 reveal">
-            <span className="inline-flex items-center gap-2 rounded-full bg-eco-50 px-4 py-1.5 text-sm font-medium text-eco-700">
+            <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">
               Contato & Orçamento
             </span>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-tech-900">
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Vamos construir algo{' '}
               <span className="text-gradient-eco">extraordinário</span>
             </h2>
-            <p className="mt-5 text-lg text-tech-500 leading-relaxed">
+            <p className="mt-5 text-lg text-slate-400 leading-relaxed">
               Conte-nos sobre o seu projeto. Nossa equipe entra em contato em até
               24 horas com uma proposta sob medida.
             </p>
@@ -72,8 +70,8 @@ export default function Contact() {
                     <CheckCircle2 className="h-4 w-4 text-eco-600" />
                   </span>
                   <div>
-                    <div className="font-semibold text-tech-900">{item.label}</div>
-                    <div className="text-sm text-tech-500">{item.desc}</div>
+                    <div className="font-semibold text-white">{item.label}</div>
+                    <div className="text-sm text-slate-400">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -82,16 +80,16 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-7 reveal" style={{ transitionDelay: '0.15s' }}>
-            <div className="relative rounded-3xl border border-tech-100 bg-white p-8 sm:p-10 shadow-xl shadow-tech-900/5">
+            <div className="relative rounded-xl border border-white/10 bg-tech-950/70 p-8 sm:p-10 shadow-xl shadow-black/20 backdrop-blur-md">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
                   <span className="flex h-20 w-20 items-center justify-center rounded-full bg-eco-100 animate-fade-in">
                     <CheckCircle2 className="h-10 w-10 text-eco-600" />
                   </span>
-                  <h3 className="mt-6 font-display text-2xl font-bold text-tech-900">
+                  <h3 className="mt-6 font-display text-2xl font-bold text-white">
                     Mensagem enviada com sucesso!
                   </h3>
-                  <p className="mt-3 max-w-md text-tech-500">
+                  <p className="mt-3 max-w-md text-slate-400">
                     Obrigado pelo interesse. Nossa equipe entrará em contato em
                     breve com a próxima etapa.
                   </p>
@@ -143,7 +141,7 @@ export default function Contact() {
                       required
                       rows={5}
                       placeholder="Descreva sua ideia, objetivos, prazos e tecnologias de interesse..."
-                      className="w-full rounded-2xl border border-tech-200 bg-tech-50/50 px-4 py-3 text-tech-800 placeholder:text-tech-400 transition-all duration-300 focus:border-eco-500 focus:bg-white focus:ring-4 focus:ring-eco-500/10 focus:outline-none resize-none"
+                      className="w-full rounded-2xl border border-white/15 bg-white/[0.05] px-4 py-3 text-white placeholder:text-slate-500 transition-all duration-300 focus:border-eco-400 focus:bg-white/10 focus:ring-4 focus:ring-eco-400/10 focus:outline-none resize-none"
                     />
                   </div>
 
@@ -204,7 +202,7 @@ function Field({ icon: Icon, label, value, onChange, placeholder, type = 'text',
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
-        className="w-full rounded-2xl border border-tech-200 bg-tech-50/50 px-4 py-3 text-tech-800 placeholder:text-tech-400 transition-all duration-300 focus:border-eco-500 focus:bg-white focus:ring-4 focus:ring-eco-500/10 focus:outline-none"
+        className="w-full rounded-2xl border border-white/15 bg-white/[0.05] px-4 py-3 text-white placeholder:text-slate-500 transition-all duration-300 focus:border-eco-400 focus:bg-white/10 focus:ring-4 focus:ring-eco-400/10 focus:outline-none"
       />
     </div>
   );

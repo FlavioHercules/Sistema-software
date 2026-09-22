@@ -23,7 +23,7 @@ export default function ServiceDetailModal({
       />
 
       {/* Modal */}
-      <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl bg-white shadow-2xl">
+      <div className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl border border-white/10 bg-tech-900 shadow-2xl shadow-black/50">
         <button
           onClick={onClose}
           className="absolute right-6 top-6 z-10 rounded-full bg-tech-100 p-2 text-tech-600 transition-colors hover:bg-tech-200"
@@ -39,7 +39,7 @@ export default function ServiceDetailModal({
               <Icon className="h-8 w-8" strokeWidth={1.8} />
             </span>
             <div>
-              <h2 className="font-display text-4xl font-bold text-tech-900">
+              <h2 className="font-display text-4xl font-bold text-white">
                 {service.title}
               </h2>
               <p className="mt-2 text-tech-500 text-lg">Solução completa e estratégica</p>
@@ -47,7 +47,7 @@ export default function ServiceDetailModal({
           </div>
 
           <div>
-            <h3 className="font-display text-xl font-bold text-tech-900 mb-4">
+            <h3 className="font-display text-xl font-bold text-white mb-4">
               Descrição Detalhada
             </h3>
             <p className="text-lg text-tech-600 leading-relaxed bg-tech-50 p-4 rounded-xl border border-tech-100">
@@ -56,7 +56,7 @@ export default function ServiceDetailModal({
           </div>
 
           <div>
-            <h3 className="font-display text-xl font-bold text-tech-900 mb-4">
+            <h3 className="font-display text-xl font-bold text-white mb-4">
               Benefícios Principais
             </h3>
             <ul className="space-y-3">

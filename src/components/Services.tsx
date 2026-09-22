@@ -1,26 +1,24 @@
 import { useState } from 'react';
 import { ArrowUpRight, Check } from 'lucide-react';
-import { services } from '@/data/content';
+import { services, type Service } from '@/data/content';
 import ServiceDetailModal from './ServiceDetailModal';
 
 export default function Services() {
-  const [selectedService, setSelectedService] = useState(null);
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   return (
     <>
-      <section id="solucoes" className="relative py-24 sm:py-32 bg-tech-50/50 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[300px] w-[700px] rounded-full bg-eco-100/40 blur-[120px] -z-10" />
-
+      <section id="solucoes" className="relative py-24 sm:py-32 bg-[#061426] overflow-hidden">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="reveal max-w-2xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-eco-50 px-4 py-1.5 text-sm font-medium text-eco-700">
+          <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">
             Soluções
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-tech-900">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Tecnologia que{' '}
             <span className="text-gradient-eco">impulsiona negócios</span>
           </h2>
-          <p className="mt-5 text-lg text-tech-500">
+          <p className="mt-5 text-lg text-slate-400">
             Do conceito ao deploy, entregamos soluções completas para cada etapa
             da sua jornada digital.
           </p>
@@ -31,7 +29,7 @@ export default function Services() {
             <article
               key={service.title}
               onClick={() => setSelectedService(service)}
-              className="reveal group relative overflow-hidden rounded-3xl border border-tech-100 bg-white p-8 card-hover hover:border-eco-200 cursor-pointer transition-all"
+              className="reveal group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.05] p-8 card-hover hover:border-eco-300/40 hover:bg-white/[0.08] cursor-pointer transition-all"
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
               {/* Hover glow */}
@@ -44,10 +42,10 @@ export default function Services() {
                 <ArrowUpRight className="h-6 w-6 text-tech-300 transition-all duration-300 group-hover:text-eco-500 group-hover:rotate-45" />
               </div>
 
-              <h3 className="relative mt-6 font-display text-xl font-bold text-tech-900">
+              <h3 className="relative mt-6 font-display text-xl font-bold text-white">
                 {service.title}
               </h3>
-              <p className="relative mt-3 text-tech-500 leading-relaxed">
+              <p className="relative mt-3 text-slate-400 leading-relaxed">
                 {service.description}
               </p>
 
@@ -55,7 +53,7 @@ export default function Services() {
                 {service.features.map((f) => (
                   <li
                     key={f}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-tech-50 px-3 py-1.5 text-xs font-medium text-tech-600"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.06] px-3 py-1.5 text-xs font-medium text-slate-300"
                   >
                     <Check className="h-3.5 w-3.5 text-eco-500" />
                     {f}

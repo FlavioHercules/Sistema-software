@@ -3,19 +3,17 @@ import { team } from '@/data/content';
 
 export default function Team() {
   return (
-    <section id="equipe" className="relative py-24 sm:py-32 overflow-hidden">
-      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-eco-100/40 blur-[100px] -z-10" />
-
+    <section id="equipe" className="relative py-24 sm:py-32 overflow-hidden bg-[#061426]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8">
         <div className="reveal max-w-2xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-eco-50 px-4 py-1.5 text-sm font-medium text-eco-700">
+          <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">
             Nossa Equipe
           </span>
-          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-tech-900">
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
             Mentes por trás da{' '}
             <span className="text-gradient-eco">EcoTech</span>
           </h2>
-          <p className="mt-5 text-lg text-tech-500">
+          <p className="mt-5 text-lg text-slate-400">
             Profissionais apaixonados por tecnologia e sustentabilidade, unidos
             por um propósito comum.
           </p>
@@ -25,7 +23,7 @@ export default function Team() {
           {team.map((member, i) => (
             <article
               key={member.name}
-              className="reveal group relative overflow-hidden rounded-3xl border border-tech-100 bg-white card-hover hover:border-eco-200"
+              className="reveal group relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.05] card-hover hover:border-eco-300/40"
               style={{ transitionDelay: `${i * 0.08}s` }}
             >
               <div className="relative h-72 overflow-hidden">
@@ -61,13 +59,13 @@ export default function Team() {
               </div>
 
               <div className="p-6">
-                <h3 className="font-display text-lg font-bold text-tech-900">
+                <h3 className="font-display text-lg font-bold text-white">
                   {member.name}
                 </h3>
-                <p className="mt-1 text-sm font-medium text-eco-600">
+                <p className="mt-1 text-sm font-medium text-eco-300">
                   {member.role}
                 </p>
-                <p className="mt-3 text-sm text-tech-500 leading-relaxed">
+                <p className="mt-3 text-sm text-slate-400 leading-relaxed">
                   {member.bio}
                 </p>
               </div>
