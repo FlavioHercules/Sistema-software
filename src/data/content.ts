@@ -99,7 +99,7 @@ export const projects: Project[] = [
       'Presença digital para apresentar o jogo, sua proposta, mecânicas e chamada para comunidade.',
     image: JogoImg,
     technologies: ['React', 'Design System', 'Mobile'],
-    url: 'https://teste-site-six-eosin.vercel.app/',
+    url: 'https://pocket-pup-pals.vercel.app/',
   },
   // Ajuste a imagem do projeto aqui: substitua o arquivo SVG por um .png real em public/images/projetos/
   // Exemplo: '/images/projetos/restaurante.png'
@@ -175,7 +175,7 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
   { label: 'Início', href: '/' },
-  { label: 'Sobre nós', href: '/sobre' },
+  { label: 'Equipe', href: '/sobre' },
   { label: 'Serviços', href: '/servicos' },
   { label: 'Projetos', href: '/projetos' },
   { label: 'Solicitar orçamento', href: '/orcamento' },

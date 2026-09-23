@@ -1,7 +1,6 @@
-import { ArrowRight, ArrowUpRight, CheckCircle2, MessageSquareQuote, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Compass, Lightbulb, MessageSquareQuote, Sparkles, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import heroVideo from '@/assets/video.mp4';
-import { projects, services } from '@/data/content';
 
 export default function HomePage() {
   return (
@@ -9,7 +8,7 @@ export default function HomePage() {
       <section className="relative isolate min-h-[78vh] overflow-hidden bg-tech-950 pt-28 pb-16 text-white">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <video
-            className="h-full w-full object-cover opacity-60"
+            className="h-full w-full object-cover opacity-95 saturate-150 contrast-110"
             src={heroVideo}
             autoPlay
             muted
@@ -17,8 +16,8 @@ export default function HomePage() {
             playsInline
             aria-hidden="true"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,12,27,0.92)_0%,rgba(2,12,27,0.72)_45%,rgba(2,12,27,0.55)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,197,94,0.20),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,12,27,0.72)_0%,rgba(2,12,27,0.30)_45%,rgba(2,12,27,0.12)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,197,94,0.28),transparent_52%)] mix-blend-screen" />
         </div>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
           <div className="grid items-center gap-12 lg:grid-cols-2">
@@ -73,57 +72,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#061426] py-24">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">Como podemos ajudar</span>
-            <h2 className="mt-5 font-display text-3xl font-bold text-white sm:text-4xl">Estratégia, design e tecnologia em um só lugar.</h2>
-          </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {services.map((service) => (
-              <div key={service.title} className="rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-1 hover:border-eco-300/40 hover:bg-white/10">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-eco-500 to-eco-700 text-white">
-                  <service.icon className="h-5 w-5" />
-                </div>
-                <h3 className="mt-5 text-xl font-semibold text-white">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-300">{service.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="bg-tech-950 py-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">Projetos em destaque</span>
-              <h2 className="mt-5 font-display text-3xl font-bold text-white sm:text-4xl">Trabalhos que fazem a diferença.</h2>
+              <span className="inline-flex items-center gap-2 rounded-full border border-eco-300/30 bg-eco-400/10 px-4 py-1.5 text-sm font-medium text-eco-300">Sobre a EcoTech</span>
+              <h2 className="mt-5 max-w-2xl font-display text-3xl font-bold text-white sm:text-4xl">Tecnologia com visão, estratégia e propósito.</h2>
             </div>
-            <Link to="/projetos" className="inline-flex items-center gap-2 text-eco-300 transition hover:text-eco-200">
-              Ver todos os projetos
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {projects.slice(0, 3).map((project) => (
-              <article key={project.name} className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04]">
-                <div className="relative h-56 overflow-hidden">
-                  <img src={project.image} alt={project.name} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" style={{ objectFit: 'cover' }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-tech-950/80 to-transparent" />
-                  <span className="absolute left-4 top-4 rounded-full border border-white/20 bg-tech-950/70 px-3 py-1 text-xs font-medium text-eco-300">{project.category}</span>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-300">
+            A EcoTech combina desenvolvimento, design e visão de negócio para transformar desafios reais em experiências digitais claras, eficientes e preparadas para crescer.
+          </p>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              { icon: Compass, title: 'Nossa visão', text: 'Tornar a tecnologia mais acessível, estratégica e capaz de gerar impacto positivo para cada negócio.' },
+              { icon: Target, title: 'Nossa estratégia', text: 'Entender o contexto, definir prioridades e construir soluções que aproximam marcas e pessoas.' },
+              { icon: Lightbulb, title: 'Nosso jeito de criar', text: 'Unir pensamento criativo, engenharia sólida e colaboração em todas as etapas do projeto.' },
+            ].map(({ icon: Icon, title, text }) => (
+              <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-eco-300/40 hover:bg-white/[0.08]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-eco-500 to-eco-700 text-white">
+                  <Icon className="h-5 w-5" />
                 </div>
-                <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold text-white">{project.name}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.technologies.slice(0, 3).map((technology) => (
-                      <span key={technology} className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-slate-200">{technology}</span>
-                    ))}
-                  </div>
-                </div>
+                <h3 className="mt-5 font-display text-xl font-semibold text-white">{title}</h3>
+                <p className="mt-3 leading-relaxed text-slate-300">{text}</p>
               </article>
             ))}
           </div>

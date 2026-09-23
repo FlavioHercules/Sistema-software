@@ -10,9 +10,11 @@ import ServicesPage from '@/pages/ServicesPage';
 import ProjectsPage from '@/pages/ProjectsPage';
 import QuotePage from '@/pages/QuotePage';
 import ContactPage from '@/pages/ContactPage';
+import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 function AppRoutes() {
   const location = useLocation();
+  useScrollReveal(location.pathname);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
